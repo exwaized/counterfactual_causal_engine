@@ -1,0 +1,85 @@
+{
+  "run_id": "ope_synthetic_v1",
+  "config": {
+    "run_id": "ope_synthetic_v1",
+    "data_path": null,
+    "n_synthetic": 20000,
+    "n_features": 10,
+    "target_policy": "uplift_policy",
+    "uplift_policy_path": "results/uplift_synthetic_v1/policy.joblib",
+    "dm_train_fraction": 0.5,
+    "n_bootstrap": 500,
+    "random_state": 42
+  },
+  "true_value_target_policy": 1.7241130169768222,
+  "true_value_logging_policy": 1.5795320997279625,
+  "empirical_logged_reward": 1.5722503413465954,
+  "estimates": {
+    "ips": {
+      "method": "ips",
+      "point_estimate": 1.7086434615222337,
+      "ci_lower": 1.6701519604459099,
+      "ci_upper": 1.7430188259636368,
+      "std_error": 0.018720052731983277,
+      "n": 20000,
+      "metadata": {
+        "effective_sample_size": 14197.0
+      }
+    },
+    "snips": {
+      "method": "snips",
+      "point_estimate": 1.7128131243930995,
+      "ci_lower": 1.6793791586822873,
+      "ci_upper": 1.7443668053847197,
+      "std_error": 0.016759762154630545,
+      "n": 20000,
+      "metadata": {
+        "effective_sample_size": 14197.0
+      }
+    },
+    "dr": {
+      "method": "dr",
+      "point_estimate": 1.705926951952395,
+      "ci_lower": 1.6675308365615322,
+      "ci_upper": 1.7483185525712304,
+      "std_error": 0.02074657192652351,
+      "n": 10000,
+      "metadata": {
+        "dm_train_size": 10000,
+        "effective_sample_size": 7087.0
+      }
+    }
+  },
+  "comparison": [
+    {
+      "estimator": "snips",
+      "point_estimate": 1.7128131243930995,
+      "ci_lower": 1.6793791586822873,
+      "ci_upper": 1.7443668053847197,
+      "true_value": 1.7241130169768222,
+      "abs_error": 0.01129989258372266,
+      "ci_covers_truth": true,
+      "std_error": 0.016759762154630545
+    },
+    {
+      "estimator": "ips",
+      "point_estimate": 1.7086434615222337,
+      "ci_lower": 1.6701519604459099,
+      "ci_upper": 1.7430188259636368,
+      "true_value": 1.7241130169768222,
+      "abs_error": 0.015469555454588502,
+      "ci_covers_truth": true,
+      "std_error": 0.018720052731983277
+    },
+    {
+      "estimator": "dr",
+      "point_estimate": 1.705926951952395,
+      "ci_lower": 1.6675308365615322,
+      "ci_upper": 1.7483185525712304,
+      "true_value": 1.7241130169768222,
+      "abs_error": 0.01818606502442721,
+      "ci_covers_truth": true,
+      "std_error": 0.02074657192652351
+    }
+  ]
+}

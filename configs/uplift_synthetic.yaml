@@ -1,0 +1,13 @@
+# Runs entirely on the built-in synthetic generator (common/io.py) — no
+# external data needed. This is the config `pipelines/01_train_uplift_policy.py`
+# uses by default; it also doubles as the recovery test for the models.
+run_id: uplift_synthetic_v1
+data_path: null
+n_synthetic: 20000
+n_features: 10
+treatment_col: treatment
+outcome_col: outcome
+method: x_learner   # t_learner | x_learner
+test_size: 0.3
+random_state: 42
+treat_fraction: 0.3  # simulate a budget: only the top 30% by predicted CATE get treated

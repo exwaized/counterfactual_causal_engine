@@ -1,0 +1,181 @@
+{
+  "run_id": "geolift_rollout_v1",
+  "config": {
+    "run_id": "geolift_rollout_v1",
+    "n_donor_geos": 20,
+    "n_pre_periods": 52,
+    "n_post_periods": 8,
+    "true_effect_pct": 0.08502247198834044,
+    "random_state": 42
+  },
+  "effect": {
+    "method": "synthetic_control_pct_lift",
+    "point_estimate": 0.09480727839446193,
+    "ci_lower": null,
+    "ci_upper": null,
+    "std_error": null,
+    "n": 21,
+    "metadata": {
+      "true_effect_pct": 0.08502247198834044,
+      "recovery_error_pp": 0.9784806406121491,
+      "placebo_p_value": 0.047619047619047616,
+      "pre_period_rmspe": 1.9514008077894962,
+      "top_donor_weights": {
+        "geo_1": 0.39281851597547557,
+        "geo_11": 0.21399722827341308,
+        "geo_19": 0.21144539999640158,
+        "geo_18": 0.05568532848203637,
+        "geo_2": 0.05541485108620939
+      }
+    }
+  },
+  "placebo_ratios": [
+    {
+      "geo_id": "geo_0",
+      "pre_rmspe": 1.9514008077894962,
+      "post_rmspe": 10.109407481837119,
+      "post_pre_ratio": 5.180589985144483,
+      "is_treated": true
+    },
+    {
+      "geo_id": "geo_1",
+      "pre_rmspe": 2.3990853515818373,
+      "post_rmspe": 6.797286973027616,
+      "post_pre_ratio": 2.833282679395222,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_14",
+      "pre_rmspe": 2.1626291694198563,
+      "post_rmspe": 3.979934633512252,
+      "post_pre_ratio": 1.840322275214619,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_6",
+      "pre_rmspe": 3.8214223396700344,
+      "post_rmspe": 6.438604718816486,
+      "post_pre_ratio": 1.6848712721380164,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_5",
+      "pre_rmspe": 1.9899120418629976,
+      "post_rmspe": 2.78774271500805,
+      "post_pre_ratio": 1.4009376577258692,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_9",
+      "pre_rmspe": 1.9508684601208628,
+      "post_rmspe": 2.6605399391255413,
+      "post_pre_ratio": 1.3637720807484437,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_12",
+      "pre_rmspe": 2.4063686464518725,
+      "post_rmspe": 3.2790255076457138,
+      "post_pre_ratio": 1.3626447105187107,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_4",
+      "pre_rmspe": 1.9130486400825961,
+      "post_rmspe": 2.509924156430679,
+      "post_pre_ratio": 1.3120022689659958,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_11",
+      "pre_rmspe": 1.7701511896777578,
+      "post_rmspe": 2.258624685983907,
+      "post_pre_ratio": 1.2759501556446555,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_10",
+      "pre_rmspe": 2.593852772856798,
+      "post_rmspe": 3.2721464627821875,
+      "post_pre_ratio": 1.261500458708894,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_17",
+      "pre_rmspe": 3.023082746842737,
+      "post_rmspe": 3.761998844439608,
+      "post_pre_ratio": 1.2444247013643885,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_19",
+      "pre_rmspe": 2.190409995704574,
+      "post_rmspe": 2.668845224648909,
+      "post_pre_ratio": 1.2184226833709457,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_16",
+      "pre_rmspe": 2.1674412084599726,
+      "post_rmspe": 2.561674965564049,
+      "post_pre_ratio": 1.1818890199029624,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_2",
+      "pre_rmspe": 2.243484860828875,
+      "post_rmspe": 2.6416242878803216,
+      "post_pre_ratio": 1.17746472641868,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_15",
+      "pre_rmspe": 1.892335933082593,
+      "post_rmspe": 2.214998960438941,
+      "post_pre_ratio": 1.1705104372407775,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_20",
+      "pre_rmspe": 3.6785739983001404,
+      "post_rmspe": 4.1963789863712,
+      "post_pre_ratio": 1.1407624226970385,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_13",
+      "pre_rmspe": 2.0483419066272575,
+      "post_rmspe": 2.2651603675344973,
+      "post_pre_ratio": 1.1058507176979293,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_18",
+      "pre_rmspe": 2.1855608036418674,
+      "post_rmspe": 2.269545217396003,
+      "post_pre_ratio": 1.0384269399479482,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_7",
+      "pre_rmspe": 2.0300949716352124,
+      "post_rmspe": 2.0712196330006245,
+      "post_pre_ratio": 1.02025750614627,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_8",
+      "pre_rmspe": 2.263120000052786,
+      "post_rmspe": 1.978987928864099,
+      "post_pre_ratio": 0.8744511686600535,
+      "is_treated": false
+    },
+    {
+      "geo_id": "geo_3",
+      "pre_rmspe": 1.970787172206566,
+      "post_rmspe": 1.6534864559027305,
+      "post_pre_ratio": 0.8389979797013931,
+      "is_treated": false
+    }
+  ]
+}

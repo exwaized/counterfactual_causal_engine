@@ -1,0 +1,6 @@
+run_id: geolift_rollout_v1
+n_donor_geos: 20
+n_pre_periods: 52
+n_post_periods: 8
+true_effect_pct: 0.08502247198834044
+random_state: 42

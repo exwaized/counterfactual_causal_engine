@@ -1,0 +1,8 @@
+{
+  "uplift_run": "uplift_synthetic_v1",
+  "ope_run": "ope_synthetic_v1",
+  "geolift_run": "geolift_rollout_v1",
+  "derived_rollout_effect_pct": 0.08502247198834044,
+  "geolift_recovered_effect_pct": 0.09480727839446193,
+  "geolift_placebo_p_value": 0.047619047619047616
+}

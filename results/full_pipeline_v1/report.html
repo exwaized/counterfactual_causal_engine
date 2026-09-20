@@ -1,0 +1,44 @@
+<!doctype html>
+<title>Causal decision engine — full pipeline run</title>
+<meta charset="utf-8">
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; }
+  h2 { border-bottom: 1px solid #ddd; padding-bottom: 0.3rem; margin-top: 2.5rem; }
+  img { max-width: 100%; border: 1px solid #ddd; border-radius: 4px; }
+  table { border-collapse: collapse; }
+  td, th { padding: 0.3rem 0.8rem; text-align: left; border-bottom: 1px solid #eee; }
+  code { background: #f2f2f2; padding: 0.1rem 0.3rem; border-radius: 3px; }
+</style>
+
+<h1>Causal decision engine — full pipeline run</h1>
+<p>uplift (who to target) &rarr; ope (worth an A/B test?) &rarr; geolift (did the rollout work?)</p>
+
+<h2>1. Uplift — who to target</h2>
+<p>Trained a x_learner on randomized campaign data, targeting the top
+30% of the population by predicted CATE.
+AUUC = 1113.86 (Qini curve above random targeting).</p>
+<img src="../uplift_synthetic_v1/qini_curve.png">
+
+<h2>2. OPE — is it worth an A/B test?</h2>
+<p>Vetted that policy against logs from a <em>different</em>, non-uniform production policy,
+using only historical data. Doubly-robust estimate: <b>1.7059</b>
+[1.6675, 1.7483] vs. the current policy's empirical value
+<b>1.5723</b> &mdash; estimated
+<b>+8.50%</b> relative lift, before
+running any live experiment.</p>
+<img src="../ope_synthetic_v1/ope_comparison.png">
+
+<h2>3. Geolift — did the (simulated) rollout work?</h2>
+<p>The vetted policy got rolled out as a broad geo-level campaign. Injected effect
+(derived from step 2's DR estimate, clipped to &plusmn;50%): <b>+8.50%</b>.
+Synthetic control's recovered estimate: <b>+9.48%</b>,
+placebo p-value <b>0.048</b>.</p>
+<img src="../geolift_rollout_v1/geo_trajectory.png">
+
+<h2>Bottom line</h2>
+<table>
+<tr><th>Stage</th><th>Question</th><th>Answer</th></tr>
+<tr><td>Uplift</td><td>Who to target?</td><td>Top 30% by predicted CATE</td></tr>
+<tr><td>OPE</td><td>Worth testing?</td><td>Yes (DR est. +8.50% vs. current)</td></tr>
+<tr><td>Geolift</td><td>Did it work?</td><td>+9.48% measured (p=0.048)</td></tr>
+</table>

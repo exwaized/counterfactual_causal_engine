@@ -1,0 +1,60 @@
+{
+  "run_id": "uplift_synthetic_v1",
+  "config": {
+    "run_id": "uplift_synthetic_v1",
+    "data_path": null,
+    "n_synthetic": 20000,
+    "n_features": 10,
+    "treatment_col": "treatment",
+    "outcome_col": "outcome",
+    "feature_cols": null,
+    "method": "x_learner",
+    "test_size": 0.3,
+    "random_state": 42,
+    "treat_fraction": 0.3
+  },
+  "auuc": {
+    "method": "auuc",
+    "point_estimate": 1113.8612891029054,
+    "ci_lower": null,
+    "ci_upper": null,
+    "std_error": null,
+    "n": 6000,
+    "metadata": {
+      "n_bins": 100
+    }
+  },
+  "policy_value": {
+    "method": "policy_value_ipw",
+    "point_estimate": 1.747144883150526,
+    "ci_lower": 1.6636645008792756,
+    "ci_upper": 1.8306252654217765,
+    "std_error": 0.04259203177104619,
+    "n": 6000,
+    "metadata": {
+      "label": "policy"
+    }
+  },
+  "treat_all_value": {
+    "method": "policy_value_ipw",
+    "point_estimate": 1.7792385239997324,
+    "ci_lower": 1.6926355826757584,
+    "ci_upper": 1.8658414653237063,
+    "std_error": 0.04418517414488469,
+    "n": 6000,
+    "metadata": {
+      "label": "treat_all"
+    }
+  },
+  "treat_none_value": {
+    "method": "policy_value_ipw",
+    "point_estimate": 0.9874293575785014,
+    "ci_lower": 0.9388524712341899,
+    "ci_upper": 1.0360062439228128,
+    "std_error": 0.024784125685873168,
+    "n": 6000,
+    "metadata": {
+      "label": "treat_none"
+    }
+  }
+}

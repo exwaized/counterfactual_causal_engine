@@ -1,0 +1,19 @@
+# Template for the real Hillstrom e-mail dataset (MineThatData, Kevin Hillstrom).
+# Not bundled — get the CSV yourself and drop it at data/raw/hillstrom.csv,
+# then point data_path here. Expected columns after light renaming:
+#   treatment  -> 1 if the customer received the "Womens E-Mail" (or "Mens
+#                 E-Mail") campaign, 0 if "No E-Mail" (the randomized control)
+#   outcome    -> "spend" (continuous) or "conversion" (binary) column
+#   the rest   -> recency, history, mens, womens, zip_code, newbie, channel
+#                 (one-hot encode the categoricals before loading)
+run_id: uplift_hillstrom_v1
+data_path: data/raw/hillstrom.csv
+n_synthetic: 20000   # unused when data_path is set
+n_features: 10       # unused when data_path is set
+treatment_col: treatment
+outcome_col: outcome
+feature_cols: null   # null -> use every column except treatment/outcome/true_cate
+method: x_learner
+test_size: 0.3
+random_state: 42
+treat_fraction: 0.3

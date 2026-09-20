@@ -1,0 +1,9 @@
+# Synthetic geo panel with a known injected effect (see geolift/simulate.py).
+# No real dataset needed -- this is both the demo and the recovery-accuracy
+# validation for the synthetic control implementation.
+run_id: geolift_synthetic_v1
+n_donor_geos: 20
+n_pre_periods: 52
+n_post_periods: 8
+true_effect_pct: 0.08
+random_state: 42

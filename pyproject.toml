@@ -1,0 +1,32 @@
+[project]
+name = "causal-engine"
+version = "0.1.0"
+description = "Causal decision engine: uplift targeting -> off-policy vetting -> geo-lift measurement"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+    "pyyaml>=6.0",
+    "pydantic>=2.0",
+    "joblib>=1.3",
+]
+
+[project.optional-dependencies]
+# Heavier causal-inference libraries. Install only if you want the extra
+# estimators (causal forests, DML) — everything in src/ works without them.
+advanced = [
+    "econml>=0.15",
+]
+dev = [
+    "pytest>=7.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
